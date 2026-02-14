@@ -9,7 +9,7 @@ export const experienceSchema = z.object({
     }),
     end_date: z.string().nullable().optional(),
     description: z.string().optional(),
-    is_current: z.boolean().default(false),
+    is_current: z.boolean().optional(),
 })
 
 export type ExperienceFormValues = z.infer<typeof experienceSchema>

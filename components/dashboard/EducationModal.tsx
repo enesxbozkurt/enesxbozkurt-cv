@@ -35,7 +35,7 @@ export function EducationModal({
     const [loading, setLoading] = useState(false)
     const router = useRouter()
 
-    const form = useForm<EducationFormValues>({
+    const form = useForm({
         resolver: zodResolver(educationSchema),
         defaultValues: {
             institution: '',
@@ -64,7 +64,7 @@ export function EducationModal({
         }
     }, [initialData, form])
 
-    async function onSubmit(data: EducationFormValues) {
+    async function onSubmit(data: any) {
         setLoading(true)
 
         try {

@@ -23,7 +23,7 @@ export function ExperienceModal({ open, onOpenChange, initialData }: ExperienceM
     const [loading, setLoading] = useState(false)
     const router = useRouter()
 
-    const form = useForm<ExperienceFormValues>({
+    const form = useForm({
         resolver: zodResolver(experienceSchema),
         defaultValues: {
             company: initialData?.company || '',
@@ -39,7 +39,7 @@ export function ExperienceModal({ open, onOpenChange, initialData }: ExperienceM
     // Reset form when initialData changes or modal opens
     // (This is a simplified approach; in production, use useEffect or key to force re-render)
 
-    async function onSubmit(data: ExperienceFormValues) {
+    async function onSubmit(data: any) {
         setLoading(true)
         try {
             const result = await upsertExperience({ ...data, id: initialData?.id }) // Ensure ID is passed for update validation if exists (though layout handles it)
