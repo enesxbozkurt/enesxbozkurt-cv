@@ -7,7 +7,9 @@ export const educationSchema = z.object({
     start_date: z.string().min(1, 'Start date is required'),
     end_date: z.string().optional(),
     description: z.string().optional(),
-    is_current: z.boolean(),
+    is_current: z.boolean().optional(),
 })
 
+
 export type EducationFormValues = z.infer<typeof educationSchema>
+
