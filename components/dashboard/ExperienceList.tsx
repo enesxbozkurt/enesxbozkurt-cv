@@ -26,7 +26,7 @@ interface ExperienceListProps {
 
 export function ExperienceList({ initialData }: ExperienceListProps) {
     const [isModalOpen, setIsModalOpen] = useState(false)
-    const [editingItem, setEditingItem] = useState<ExperienceFormValues | null>(null)
+    const [editingItem, setEditingItem] = useState<(ExperienceFormValues & { id: string }) | null>(null)
     const [deletingId, setDeletingId] = useState<string | null>(null)
     const router = useRouter()
 
@@ -128,7 +128,7 @@ export function ExperienceList({ initialData }: ExperienceListProps) {
                 key={editingItem ? editingItem.id : 'new'} // Force re-mount on change
             />
 
-            <AlertDialog open={!!deletingId} onOpenChange={(open) => !open && setDeletingId(null)}>
+            <AlertDialog open={!!deletingId} onOpenChange={(open: boolean) => !open && setDeletingId(null)}>
                 <AlertDialogContent className="bg-panel border-border text-white">
                     <AlertDialogHeader>
                         <AlertDialogTitle>Are you sure?</AlertDialogTitle>

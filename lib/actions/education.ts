@@ -4,7 +4,7 @@ import { createClient } from '@/lib/supabase/server'
 import { educationSchema, EducationFormValues } from '@/lib/validators/education'
 import { revalidatePath } from 'next/cache'
 
-export async function upsertEducation(data: EducationFormValues) {
+export async function upsertEducation(data: EducationFormValues & { id?: string }) {
     const supabase = await createClient()
 
     const result = educationSchema.safeParse(data)

@@ -16,7 +16,7 @@ import { Loader2 } from 'lucide-react'
 interface ExperienceModalProps {
     open: boolean
     onOpenChange: (open: boolean) => void
-    initialData?: ExperienceFormValues | null
+    initialData?: (ExperienceFormValues & { id?: string }) | null
 }
 
 export function ExperienceModal({ open, onOpenChange, initialData }: ExperienceModalProps) {

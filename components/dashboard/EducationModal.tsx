@@ -3,7 +3,8 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { educationSchema, EducationFormValues } from '@/lib/validators/education'
+import { educationSchema } from '@/lib/validators/education'
+import type { EducationFormValues } from '@/lib/validators/education'
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -16,7 +17,7 @@ import { Loader2 } from 'lucide-react'
 interface EducationModalProps {
     open: boolean
     onOpenChange: (open: boolean) => void
-    initialData?: EducationFormValues | null
+    initialData?: (EducationFormValues & { id?: string }) | null
 }
 
 export function EducationModal({ open, onOpenChange, initialData }: EducationModalProps) {
@@ -25,7 +26,7 @@ export function EducationModal({ open, onOpenChange, initialData }: EducationMod
 
     const form = useForm<EducationFormValues>({
         resolver: zodResolver(educationSchema),
-        defaultValues: initialData || {
+        defaultValues: initialData ?? {
             institution: '',
             degree: '',
             field: '',

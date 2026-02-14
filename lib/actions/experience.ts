@@ -4,7 +4,7 @@ import { createClient } from '@/lib/supabase/server'
 import { experienceSchema, ExperienceFormValues } from '@/lib/validators/experience'
 import { revalidatePath } from 'next/cache'
 
-export async function upsertExperience(data: ExperienceFormValues) {
+export async function upsertExperience(data: ExperienceFormValues & { id?: string }) {
     const supabase = await createClient()
 
     // Validate

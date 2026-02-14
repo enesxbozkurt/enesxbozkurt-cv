@@ -26,7 +26,7 @@ interface EducationListProps {
 
 export function EducationList({ initialData }: EducationListProps) {
     const [isModalOpen, setIsModalOpen] = useState(false)
-    const [editingItem, setEditingItem] = useState<EducationFormValues | null>(null)
+    const [editingItem, setEditingItem] = useState<(EducationFormValues & { id: string }) | null>(null)
     const [deletingId, setDeletingId] = useState<string | null>(null)
     const router = useRouter()
 

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # CV Website - Next.js + Supabase
 
 A professional, modern, single-page scroll CV/Portfolio web application with DejavuAI-inspired design (black + neon green theme).
@@ -162,3 +163,7 @@ MIT
 ## Support
 
 For issues or questions, please open an issue on GitHub.
+=======
+# MyCvProject
+My Cv Project
+>>>>>>> 0ba93a5c6f9ee5e58ec6ec0400eb16ffe3498687
