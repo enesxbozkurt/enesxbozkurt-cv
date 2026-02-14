@@ -2,6 +2,8 @@ import { createClient } from '@/lib/supabase/server'
 import { EducationList } from '@/components/dashboard/EducationList'
 import { redirect } from 'next/navigation'
 
+export const dynamic = 'force-dynamic'
+
 export default async function EducationPage() {
     const supabase = await createClient()
     const { data: { user } } = await supabase.auth.getUser()
