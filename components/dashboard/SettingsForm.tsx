@@ -11,7 +11,7 @@ import { toast } from 'sonner'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { Loader2, Globe, Lock } from 'lucide-react'
-import { Switch } from '@/components/ui/switch'
+
 
 interface SettingsFormProps {
     initialData: SettingsFormValues

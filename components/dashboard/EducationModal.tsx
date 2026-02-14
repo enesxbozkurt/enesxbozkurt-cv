@@ -26,14 +26,14 @@ export function EducationModal({ open, onOpenChange, initialData }: EducationMod
 
     const form = useForm<EducationFormValues>({
         resolver: zodResolver(educationSchema),
-        defaultValues: initialData ?? {
-            institution: '',
-            degree: '',
-            field: '',
-            start_date: '',
-            end_date: '',
-            description: '',
-            is_current: false,
+        defaultValues: {
+            institution: initialData?.institution || '',
+            degree: initialData?.degree || '',
+            field: initialData?.field || '',
+            start_date: initialData?.start_date || '',
+            end_date: initialData?.end_date || '',
+            description: initialData?.description || '',
+            is_current: initialData?.is_current ?? false,
         },
     })
 

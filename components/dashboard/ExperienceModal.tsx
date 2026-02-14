@@ -25,14 +25,14 @@ export function ExperienceModal({ open, onOpenChange, initialData }: ExperienceM
 
     const form = useForm<ExperienceFormValues>({
         resolver: zodResolver(experienceSchema),
-        defaultValues: initialData || {
-            company: '',
-            position: '',
-            location: '',
-            start_date: '',
-            end_date: '',
-            description: '',
-            is_current: false,
+        defaultValues: {
+            company: initialData?.company || '',
+            position: initialData?.position || '',
+            location: initialData?.location || '',
+            start_date: initialData?.start_date || '',
+            end_date: initialData?.end_date || '',
+            description: initialData?.description || '',
+            is_current: initialData?.is_current ?? false,
         },
     })
 
