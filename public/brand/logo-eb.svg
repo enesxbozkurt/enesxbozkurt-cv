@@ -1,0 +1,11 @@
+<svg width="180" height="48" viewBox="0 0 180 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Stylized "E" icon -->
+  <rect x="0" y="4" width="32" height="40" rx="4" fill="#29FF4F" fill-opacity="0.1"/>
+  <path d="M10 16H22M10 24H20M10 32H22" stroke="#29FF4F" stroke-width="3" stroke-linecap="round"/>
+  <path d="M10 16V32" stroke="#29FF4F" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- "Enes Bozkurt" Text -->
+  <text x="44" y="31" fill="#EDEDED" style="font-family: 'Inter', sans-serif; font-size: 22px; font-weight: 800; letter-spacing: -0.05em;">
+    ENES <tspan fill="#29FF4F">BOZKURT</tspan>
+  </text>
+</svg>

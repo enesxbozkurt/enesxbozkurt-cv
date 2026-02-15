@@ -14,6 +14,8 @@ const navItems = [
     { name: "Contact", to: "contact" },
 ]
 
+
+
 export function Navbar({ name }: { name: string }) {
     const [scrolled, setScrolled] = useState(false)
     const [activeSection, setActiveSection] = useState("")
@@ -54,7 +56,7 @@ export function Navbar({ name }: { name: string }) {
             transition={{ duration: 0.5 }}
             className={cn(
                 "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-                scrolled ? "bg-bg/80 backdrop-blur-md border-b border-white/5 py-4" : "py-6 bg-transparent"
+                scrolled ? "bg-bg/80 backdrop-blur-md border-b border-white/5 py-3" : "py-5 bg-transparent"
             )}
         >
             <div className="container mx-auto px-6 flex items-center justify-between">

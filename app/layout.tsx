@@ -8,8 +8,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Professional CV & Portfolio",
-  description: "Modern CV and portfolio website",
+  title: "Enes Bozkurt | Developer",
+  description: "Full Stack Developer portfolio and CV website.",
+  icons: {
+    icon: '/brand/favicon-e.svg',
+  },
 };
 
 export default function RootLayout({
