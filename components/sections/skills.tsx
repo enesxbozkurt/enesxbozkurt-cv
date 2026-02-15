@@ -70,7 +70,7 @@ export function Skills({ skills }: SkillsProps) {
                                 <Badge
                                     key={skill.id}
                                     variant="outline"
-                                    className="bg-bg/50 border-white/10 hover:border-primary hover:text-primary transition-all py-2 px-3 text-sm"
+                                    className="bg-bg/50 border-white/10 hover:border-primary transition-all py-2 px-3 text-sm"
                                 >
                                     {skill.name}
                                 </Badge>

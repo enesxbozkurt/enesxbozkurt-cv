@@ -47,11 +47,11 @@ export function About({ bio, location }: AboutProps) {
                         <div className="space-y-4 relative z-10">
                             <div className="flex items-center justify-between border-b border-white/5 pb-2">
                                 <span className="text-muted">Experience</span>
-                                <span className="text-primary font-bold">5+ Years</span>
+                                <span className="text-primary font-bold">3+ Years</span>
                             </div>
                             <div className="flex items-center justify-between border-b border-white/5 pb-2">
                                 <span className="text-muted">Projects</span>
-                                <span className="text-primary font-bold">20+ Delivered</span>
+                                <span className="text-primary font-bold">5+ Delivered</span>
                             </div>
                             <div className="flex items-center justify-between border-b border-white/5 pb-2">
                                 <span className="text-muted">Clients</span>

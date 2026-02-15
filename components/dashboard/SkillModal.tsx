@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { skillSchema, SkillFormValues, SKILL_CATEGORIES } from '@/lib/validators/skill'
+import { skillSchema, SkillFormValues, SKILL_CATEGORIES, PROFICIENCY_LEVELS } from '@/lib/validators/skill'
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -16,7 +16,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 interface SkillModalProps {
     open: boolean
     onOpenChange: (open: boolean) => void
-    initialData?: SkillFormValues | null
+    initialData?: (SkillFormValues & { id?: string }) | null
     defaultCategory?: string
 }
 
@@ -26,15 +26,12 @@ export function SkillModal({ open, onOpenChange, initialData, defaultCategory }:
 
     const form = useForm<SkillFormValues>({
         resolver: zodResolver(skillSchema),
-        defaultValues: initialData || {
-            name: '',
-            category: (defaultCategory as any) || 'Frontend',
-            level: 0,
+        defaultValues: {
+            name: initialData?.name || '',
+            category: initialData?.category || (defaultCategory as any) || 'Frontend',
+            proficiency_level: initialData?.proficiency_level || 'intermediate',
         },
     })
-
-    // Reset form needs handling for category switch, but React Hook Form reset() inside useEffect is cleaner.
-    // For simplicity, relying on key={...} in parent or manual reset when needed.
 
     async function onSubmit(data: SkillFormValues) {
         setLoading(true)
@@ -84,6 +81,26 @@ export function SkillModal({ open, onOpenChange, initialData, defaultCategory }:
                         </Select>
                         {form.formState.errors.category && (
                             <p className="text-xs text-red-400">{form.formState.errors.category.message}</p>
+                        )}
+                    </div>
+
+                    <div className="space-y-2">
+                        <label className="text-sm font-medium">Proficiency Level</label>
+                        <Select
+                            onValueChange={(val: string) => form.setValue('proficiency_level', val as any)}
+                            defaultValue={form.watch('proficiency_level')}
+                        >
+                            <SelectTrigger className="bg-black border-white/10 text-white">
+                                <SelectValue placeholder="Select level" />
+                            </SelectTrigger>
+                            <SelectContent className="bg-panel border-border text-white">
+                                {PROFICIENCY_LEVELS.map((level) => (
+                                    <SelectItem key={level} value={level} className="capitalize">{level}</SelectItem>
+                                ))}
+                            </SelectContent>
+                        </Select>
+                        {form.formState.errors.proficiency_level && (
+                            <p className="text-xs text-red-400">{form.formState.errors.proficiency_level.message}</p>
                         )}
                     </div>
 

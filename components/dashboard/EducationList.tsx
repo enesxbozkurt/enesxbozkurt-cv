@@ -40,7 +40,7 @@ export function EducationList({ initialData }: EducationListProps) {
             id: item.id,
             institution: item.institution,
             degree: item.degree,
-            field: item.field_of_study || '',
+            field: item.field || '',
             start_date: item.start_date,
             end_date: item.end_date || '',
             description: item.description || '',
@@ -93,7 +93,7 @@ export function EducationList({ initialData }: EducationListProps) {
                                         <span className="hidden md:inline text-muted">•</span>
                                         <span className="text-primary font-medium">{item.degree}</span>
                                     </div>
-                                    <p className="text-sm text-muted">{item.field_of_study}</p>
+                                    <p className="text-sm text-muted">{item.field}</p>
                                     <p className="text-xs text-muted/60">{formatDateRange(item.start_date, item.end_date)}</p>
                                 </div>
                             </div>

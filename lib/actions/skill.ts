@@ -17,7 +17,7 @@ export async function upsertSkill(data: SkillFormValues) {
         user_id: user.id,
         name: data.name,
         category: data.category,
-        level: data.level || 0,
+        proficiency_level: data.proficiency_level,
     }
 
     try {

@@ -42,7 +42,7 @@ export function SkillList({ initialData }: SkillListProps) {
             id: item.id,
             name: item.name,
             category: item.category as any,
-            level: item.level || 0,
+            proficiency_level: item.proficiency_level,
         })
         setIsModalOpen(true)
     }

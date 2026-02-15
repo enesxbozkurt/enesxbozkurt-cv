@@ -17,7 +17,7 @@ export async function upsertEducation(data: EducationFormValues & { id?: string 
         user_id: user.id,
         institution: data.institution,
         degree: data.degree,
-        field_of_study: data.field,
+        field: data.field,
         start_date: data.start_date,
         end_date: data.is_current ? null : data.end_date,
         description: data.description,
