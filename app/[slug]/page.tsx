@@ -137,7 +137,6 @@ export default async function CVPage({ params }: PageProps) {
                     phone={profile.phone}
                     linkedin={profile.linkedin}
                     github={profile.github}
-                    website={profile.website}
                 />
             </main>
 

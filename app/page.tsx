@@ -88,7 +88,6 @@ export default async function HomePage() {
           phone={profile.phone}
           linkedin={profile.linkedin}
           github={profile.github}
-          website={profile.website}
         />
       </main>
 
