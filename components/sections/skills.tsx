@@ -2,7 +2,28 @@
 
 import { Section } from '@/components/ui/section'
 import { Badge } from '@/components/ui/badge'
-import { Code2, Database, Layout, Terminal } from 'lucide-react'
+import {
+    Code2,
+    Database,
+    Layout,
+    Terminal,
+    Globe,
+    Server,
+    Cpu,
+    Layers,
+    GitBranch,
+    Github,
+    Send,
+    Lightbulb,
+    Box,
+    RefreshCcw,
+    CheckCircle,
+    Bug,
+    Atom,
+    Zap,
+    FileType,
+    Braces
+} from 'lucide-react'
 import { motion } from 'framer-motion'
 
 interface Skill {
@@ -15,12 +36,51 @@ interface SkillsProps {
     skills: Skill[]
 }
 
+const getSkillIcon = (skillName: string) => {
+    const name = skillName.toLowerCase()
+
+    // Frontend
+    if (name.includes('html')) return <FileType className="w-3.5 h-3.5" />
+    if (name.includes('css')) return <Layout className="w-3.5 h-3.5" />
+    if (name.includes('javascript')) return <Code2 className="w-3.5 h-3.5" />
+    if (name.includes('typescript')) return <Code2 className="w-3.5 h-3.5" />
+    if (name.includes('react')) return <Atom className="w-3.5 h-3.5" />
+    if (name.includes('next.js')) return <Zap className="w-3.5 h-3.5" />
+    if (name.includes('tailwind')) return <Layout className="w-3.5 h-3.5" />
+
+    // Backend
+    if (name.includes('node.js')) return <Server className="w-3.5 h-3.5" />
+    if (name.includes('rest api')) return <Globe className="w-3.5 h-3.5" />
+    if (name.includes('supabase')) return <Database className="w-3.5 h-3.5" />
+    if (name.includes('.net')) return <Cpu className="w-3.5 h-3.5" />
+
+    // Database
+    if (name.includes('postgresql')) return <Database className="w-3.5 h-3.5" />
+    if (name.includes('mssql')) return <Database className="w-3.5 h-3.5" />
+    if (name.includes('entity framework')) return <Braces className="w-3.5 h-3.5" />
+
+    // Tools
+    if (name.includes('git') && !name.includes('github')) return <GitBranch className="w-3.5 h-3.5" />
+    if (name.includes('github')) return <Github className="w-3.5 h-3.5" />
+    if (name.includes('postman')) return <Send className="w-3.5 h-3.5" />
+
+    // Other / Soft Skills
+    if (name.includes('problem solving')) return <Lightbulb className="w-3.5 h-3.5" />
+    if (name.includes('oop')) return <Box className="w-3.5 h-3.5" />
+    if (name.includes('agile')) return <RefreshCcw className="w-3.5 h-3.5" />
+    if (name.includes('testing')) return <CheckCircle className="w-3.5 h-3.5" />
+    if (name.includes('debugging')) return <Bug className="w-3.5 h-3.5" />
+
+    return <Terminal className="w-3.5 h-3.5" />
+}
+
 const getCategoryIcon = (category: string) => {
     switch (category.toLowerCase()) {
         case 'frontend': return <Layout className="w-5 h-5" />
-        case 'backend': return <Database className="w-5 h-5" />
-        case 'languages': return <Code2 className="w-5 h-5" />
-        default: return <Terminal className="w-5 h-5" />
+        case 'backend': return <Server className="w-5 h-5" />
+        case 'database': return <Database className="w-5 h-5" />
+        case 'tools': return <Terminal className="w-5 h-5" />
+        default: return <Code2 className="w-5 h-5" />
     }
 }
 
@@ -70,8 +130,11 @@ export function Skills({ skills }: SkillsProps) {
                                 <Badge
                                     key={skill.id}
                                     variant="outline"
-                                    className="bg-bg/50 border-white/10 hover:border-primary transition-all py-2 px-3 text-sm"
+                                    className="bg-bg/50 border-white/10 hover:border-primary transition-all py-2 px-3 text-sm flex items-center gap-2"
                                 >
+                                    <span className="text-primary/70 group-hover:text-primary transition-colors">
+                                        {getSkillIcon(skill.name)}
+                                    </span>
                                     {skill.name}
                                 </Badge>
                             ))}

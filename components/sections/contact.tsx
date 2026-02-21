@@ -3,7 +3,7 @@
 import { Section } from '@/components/ui/section'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
-import { Mail, Phone, Linkedin, Github, Globe, Send, MessageSquare } from 'lucide-react'
+import { Mail, Phone, Linkedin, Github, Send, MessageSquare } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 interface ContactProps {
@@ -11,10 +11,9 @@ interface ContactProps {
     phone?: string
     linkedin?: string
     github?: string
-    website?: string
 }
 
-export function Contact({ email, phone, linkedin, github, website }: ContactProps) {
+export function Contact({ email, phone, linkedin, github }: ContactProps) {
     return (
         <Section id="contact" className="pb-32">
             <div className="flex flex-col items-center mb-16">
@@ -95,14 +94,7 @@ export function Contact({ email, phone, linkedin, github, website }: ContactProp
                                     </Button>
                                 )}
 
-                                {website && (
-                                    <Button variant="outline" asChild className="h-24 flex flex-col items-center justify-center gap-2 hover:bg-primary/10 hover:border-primary group lg:col-span-2">
-                                        <a href={website} target="_blank" rel="noopener noreferrer">
-                                            <Globe className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
-                                            <span>Website</span>
-                                        </a>
-                                    </Button>
-                                )}
+
                             </div>
 
                             <Button className="w-full mt-6" size="lg" asChild>

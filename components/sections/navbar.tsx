@@ -61,8 +61,7 @@ export function Navbar({ name }: { name: string }) {
         >
             <div className="container mx-auto px-6 flex items-center justify-between">
                 <div
-                    className="text-xl font-bold tracking-tighter cursor-pointer group"
-                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                    className="text-xl font-bold tracking-tighter group"
                 >
                     <span className="text-white group-hover:text-primary transition-colors">&lt;</span>
                     {name?.split(' ')[0] || 'Enes'}
