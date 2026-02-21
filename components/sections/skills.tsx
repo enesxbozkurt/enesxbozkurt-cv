@@ -130,9 +130,9 @@ export function Skills({ skills }: SkillsProps) {
                                 <Badge
                                     key={skill.id}
                                     variant="outline"
-                                    className="bg-bg/50 border-white/10 hover:border-primary transition-all py-2 px-3 text-sm flex items-center gap-2"
+                                    className="bg-bg/50 border-white/10 hover:border-primary transition-all py-2 px-3 text-sm flex items-center gap-2 group/skill"
                                 >
-                                    <span className="text-primary/70 group-hover:text-primary transition-colors">
+                                    <span className="text-primary/70 group-hover/skill:text-bg transition-colors">
                                         {getSkillIcon(skill.name)}
                                     </span>
                                     {skill.name}
