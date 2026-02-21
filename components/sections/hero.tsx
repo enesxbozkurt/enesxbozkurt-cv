@@ -96,7 +96,7 @@ export function Hero({ name, title, tagline, avatarUrl, email }: HeroProps) {
                             </Button>
                         )}
                         <Button variant="secondary" size="lg" asChild>
-                            <a href="/Enes_Bozkurt_CV" download="Enes_Bozkurt_CV">
+                            <a href="/Enes_Bozkurt_CV.pdf" download="Enes_Bozkurt_CV.pdf">
                                 <Download className="mr-2 h-4 w-4" />
                                 Download CV
                             </a>
